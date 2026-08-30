@@ -18,7 +18,8 @@ Recursive Experiential–Working Memory Evolution for Long-Horizon Agent Harness
 </p>
 
 <p align="center">
-  <a href="https://paperswithcode.co/paper/2608.24876"><img src="https://paperswithcode.co/api/v1/papers/2608.24876/badge.svg" alt="SOTA on τ²-Bench (Airline) and τ²-Bench (Retail)"></a>
+  <a href="https://paperswithcode.co/benchmark/tau2-bench-retail?task=agents"><img src="https://paperswithcode.co/api/v1/papers/2608.24876/badge.svg?eval=28331" alt="SOTA on τ²-Bench (Retail)"></a>
+  <a href="https://paperswithcode.co/benchmark/tau2-bench-airline?task=agents"><img src="https://paperswithcode.co/api/v1/papers/2608.24876/badge.svg?eval=28814" alt="SOTA on τ²-Bench (Airline)"></a>
 </p>
 
 <p align="center">
