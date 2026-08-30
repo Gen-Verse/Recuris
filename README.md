@@ -18,6 +18,10 @@ Recursive Experiential–Working Memory Evolution for Long-Horizon Agent Harness
 </p>
 
 <p align="center">
+  <a href="https://paperswithcode.co/paper/2608.24876"><img src="https://paperswithcode.co/api/v1/papers/2608.24876/badge.svg" alt="SOTA on τ²-Bench (Airline) and τ²-Bench (Retail)"></a>
+</p>
+
+<p align="center">
   <b>National University of Singapore</b> &nbsp;·&nbsp; <b>Stanford University</b> &nbsp;·&nbsp; <b>University of Oxford</b> &nbsp;·&nbsp; <b>Princeton University</b>
 </p>
 
