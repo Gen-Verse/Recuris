@@ -13,6 +13,7 @@ lives in one small file that can be read end to end.
    improvement it did not cause.
 4. ``Ledger`` -- the do-not-repeat record.
 """
+import math
 import random
 import statistics
 from dataclasses import dataclass, field
@@ -52,7 +53,20 @@ def held_out_paired_gate(base, cand, alpha=0.05, reg_cap=0, eps=1e-9,
     ``reg_cap`` is a hard rejection condition, counting noise there turns the
     gate into a coin flip.
     """
-    items = sorted(set(base) & set(cand))
+    # A paired admission test cannot drop missing items or admit invalid scores.
+    # Both benchmark variants promise per-seed values in the unit interval.
+    def valid(matrix):
+        return isinstance(matrix, dict) and all(
+            isinstance(scores, (list, tuple)) and scores
+            and all(type(score) in (int, float) and math.isfinite(score)
+                    and 0 <= score <= 1 for score in scores)
+            for scores in matrix.values()
+        )
+
+    if not valid(base) or not valid(cand) or set(base) != set(cand):
+        return Verdict(False, 0.0, (0.0, 0.0), 0, 0,
+                       "invalid or unpaired held-out scores")
+    items = sorted(base)
     diffs = [statistics.mean(cand[i]) - statistics.mean(base[i]) for i in items]
     if not diffs:
         return Verdict(False, 0.0, (0.0, 0.0), 0, 0, "no comparable items")
